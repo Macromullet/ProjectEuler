@@ -24,10 +24,10 @@ namespace EulerAnswers
             return result.ToString();
         }
 
-        private BigInteger AnswerSlow(int max)
+        private BigInteger AnswerSlow(int n)
         {
             BigInteger result = 0;
-            var items = Enumerable.Range(1, max).Where(item => item % 3 == 0 || item % 5 == 0);
+            var items = Enumerable.Range(1, n).Where(item => item % 3 == 0 || item % 5 == 0);
             foreach (var item in items)
             {
                 result = result + item;
@@ -35,18 +35,18 @@ namespace EulerAnswers
             return result;
         }
 
-        private BigInteger AnswerFast(int max)
+        private BigInteger AnswerFast(int n)
         {
-            var threes = NaturalSeriesSum(max, 3);
-            var fives = NaturalSeriesSum(max, 5);
-            var fifteens = NaturalSeriesSum(max, 15);
+            var threes = NaturalSeriesSum(n, 3);
+            var fives = NaturalSeriesSum(n, 5);
+            var fifteens = NaturalSeriesSum(n, 15);
             return (threes + fives) - fifteens;
         }
 
-        private BigInteger NaturalSeriesSum(BigInteger max, BigInteger increment)
+        private BigInteger NaturalSeriesSum(BigInteger n, BigInteger increment)
         {
             BigInteger remainder;
-            var term = BigInteger.DivRem(max, increment, out remainder);
+            var term = BigInteger.DivRem(n, increment, out remainder);
             return NaturalSeriesSum(term) * increment;
         }
 
