@@ -47,10 +47,10 @@ namespace EulerAnswers
         {
             BigInteger remainder;
             var term = BigInteger.DivRem(max, increment, out remainder);
-            return NaturalSiriesSum(term) * increment;
+            return NaturalSeriesSum(term) * increment;
         }
 
-        private BigInteger NaturalSiriesSum(BigInteger n)
+        private BigInteger NaturalSeriesSum(BigInteger n)
         {
             return (n * (n + 1)) / 2;
         }
