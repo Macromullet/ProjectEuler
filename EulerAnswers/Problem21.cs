@@ -18,7 +18,7 @@ namespace EulerAnswers
             HashSet<int> matchingNumbers = new HashSet<int>();
             for (int baseValue = 1; baseValue < max; baseValue++)
             {
-                for (int multiple = 2; multiple < max; multiple++) // no need to go above 500 because we can't really divide past this. We could probably even use a lower number, like max/4;
+                for (int multiple = 2; multiple < max; multiple++)
                 {
                     var product = baseValue * multiple;
                     if (product > baseValue && product < max)

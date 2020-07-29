@@ -19,7 +19,7 @@ namespace ProjectEuler
             InitializeComponent();
         }
 
-        private bool _PreJit = true;
+        private bool _PreJit = false;
         protected override void OnLoad(EventArgs e)
         {
             base.OnLoad(e);
